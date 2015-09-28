@@ -40,7 +40,7 @@
 			overflow: hidden;
 		}
 		h1{
-			font-family: "Kurale", sans-serif;
+			font-family: 'Kurale', serif;
 			background: fade(@white, 80%);
 			text-align: center;
 			padding: 0 20px 5px;
@@ -55,6 +55,7 @@
 			background: fade(@green, 80%);
 		}
 		.btn-more{
+			display: none;
 			margin-top: 20px;
 			float: right;
 			.long-arrow{
@@ -137,21 +138,22 @@
 	top: 0;
 	left: 0;
 	z-index: 20;
-	background: fade(@white, 70%);
+	background: fade(@white, 90%);
 	opacity: 0;
 	visibility: hidden;
 	overflow: hidden;
 	& > .inner{
-		height: 0;
+		width: 800px;
+		height: 450px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		padding-bottom: 75%;
-		background: red;
 		transform: translateX(-50%) translateY(-50%);
 		-webkit-overflow-scrolling: touch;
 		opacity: 0;
 		transition: all .25s @easing;
+		border: 2px solid @green;
+		box-sizing: border-box;
 		overflow: hidden;
 		& > iframe{
 			width: 100%;
@@ -160,6 +162,7 @@
 			top: 0;
 			left: 0;
 			border: none;
+			overflow: hidden;
 		}
 	}
 	&.active{
@@ -207,6 +210,7 @@
 /*	questions start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .outer.questions-holder{
+	margin-bottom: 60px;
 	.separator-horizontal{
 		margin-bottom: 40px;
 	}
@@ -235,7 +239,7 @@
 			text-align: center;
 		}
 		a{
-			display: inline-block;
+			display: none;
 			margin: 20px 20px 0 0;
 			color: @green;
 			& > .long-arrow{
@@ -251,6 +255,7 @@
 		}
 	}
 	.btn-small{
+		display: none;
 		margin: 60px auto;
 	}
 }
