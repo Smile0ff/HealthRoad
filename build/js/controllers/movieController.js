@@ -42,7 +42,7 @@ var app = app || {};
 		return false;
 	}
 	function insertMovie(movieID){
-		this.el.find("iframe").attr("src", "https://www.youtube.com/embed/"+ movieID +"?autohide=1&autoplay=1");
+		this.el.find("iframe").attr("src", "https://www.youtube.com/embed/b_eY9fmbUAM?autohide=1&autoplay=1");
 	}
 	function closeMovie(e){
 		e.preventDefault();
