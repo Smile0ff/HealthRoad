@@ -4,21 +4,16 @@ var app = app || {};
 
 	"use strict";
 
-	var movieID = {
-		ua: "b_eY9fmbUAM",
-		ru: "Gy1Or9273sY"
-	}
-
 	function MovieController(){
 		this.el = $("#movie-holder");
 		this.initialize.apply(this, arguments);
 	}
 	MovieController.prototype = {
 		button: [],
+		isStarted: false,
 		initialize: initialize,
 		_events: _events,
 		handleMovie: handleMovie,
-		insertMovie: insertMovie,
 		closeMovie: closeMovie
 	}
 
@@ -31,22 +26,22 @@ var app = app || {};
 		this.el.on("click", $.proxy(this.closeMovie, this));
 	}
 	function handleMovie(e){
-		var target = $(e.target).closest("#watch-movie"),
-			lang = target.data("lang"),
-			id = movieID[lang];
+		if(this.isStarted) return;
 
-		if(id.length <= 0) return;
-		this.insertMovie(id);
-		this.el.addClass("active");
+		var self = this;
+		this.el.find(".inner").html('<iframe src="https://www.youtube.com/embed/b_eY9fmbUAM?autoplay=1" width="100%" height="100%" allowfullscreen="1" frameborder="0"></iframe>');
 
+		root.setTimeout(function(){
+			self.isStarted = true;
+			self.el.addClass("active");
+		}, 100);
 		return false;
 	}
-	function insertMovie(movieID){
-		this.el.find("iframe").attr("src", "https://www.youtube.com/embed/b_eY9fmbUAM?autohide=1&autoplay=1");
-	}
 	function closeMovie(e){
-		e.preventDefault();
-		this.el.removeClass("active").find("iframe").attr("src", "");
+		this.el.removeClass("active").find(".inner").empty();
+		this.isStarted = false;
+
+		return false;
 	}
 
 	app.MovieController = MovieController;
