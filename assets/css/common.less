@@ -146,9 +146,23 @@ a{ text-decoration: none; }
 				}
 			}
 			&.call-center-holder{
-				& > li{
-					a{
-						color: @green;
+				& > li a{ color: @green; }
+			}
+			&.phones-holder{
+				a{
+					span{
+						display: inline-block;
+						vertical-align: top;
+						width: auto;
+						height: auto;
+						font-size: 1.125em;
+						line-height: 20px;
+						margin-right: 10px;
+						&:before{
+							display: inherit;
+							vertical-align: inherit;
+							padding-top: 3px;
+						}
 					}
 				}
 			}

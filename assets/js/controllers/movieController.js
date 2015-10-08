@@ -38,7 +38,11 @@ var app = app || {};
 		return false;
 	}
 	function closeMovie(e){
-		this.el.removeClass("active").find(".inner").empty();
+		var target = $(e.target);
+
+		if(target.closest(".inner").length <= 0 || target.hasClass("close")){
+			this.el.removeClass("active").find(".inner").empty();
+		}
 		this.isStarted = false;
 
 		return false;
