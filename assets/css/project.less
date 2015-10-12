@@ -1,0 +1,38 @@
+@import "lib/common.less";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content-info-holder{
+	.list-holder{
+		margin: 20px auto;
+	}
+	&.advantage{
+		.list-holder{
+			margin: 40px auto;
+		}
+	}
+	.movie-holder{
+		width: 100%;
+		margin: 20px auto 40px;
+		height: auto;
+		overflow: hidden;
+		& > .inner{
+			width: 100%;
+			height: 0;
+			padding-bottom: 56.25%;
+			position: relative;
+			overflow: hidden;
+			& > iframe{
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

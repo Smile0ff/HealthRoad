@@ -1,0 +1,25 @@
+@import "lib/common.less";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content-info-holder{
+	.snack-lunch-snack{
+		li{
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0;
+			& > .icon{
+				padding: 0 20px;
+			}
+			& > .long-arrow{
+				&:before{ background: @black; }
+				&:after{ border-left: 6px solid @black; }
+			}
+		}
+		p{ text-align: center; }
+	}
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

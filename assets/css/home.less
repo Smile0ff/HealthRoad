@@ -1,4 +1,4 @@
-@import "settings.less";
+@import "lib/common.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -42,6 +42,7 @@
 		h1{
 			font-family: 'Kurale', serif;
 			background: fade(@white, 80%);
+			font-size: 3.75em;
 			text-align: center;
 			padding: 0 20px 5px;
 			color: @green;
@@ -207,15 +208,29 @@
 	}
 	.suppliers{
 		width: 100%;
-		margin: 40px auto 60px;
+		margin: 40px auto 20px;
 		text-align: center;
 		li{
 			display: inline-block;
-			vertical-align: top;
-			width: 130px;
+			vertical-align: middle;
+			width: 100px;
 			height: auto;
-			overflow: hidden;
-			margin: 0 10px;
+			position: relative;
+			margin: 0 20px 40px;
+			figure{
+				display: block;
+				width: 100%;
+				height: auto;
+				position: relative;
+				transition: all .5s @easing;
+				transform: scale(1);
+				opacity: .75;
+				backface-visibility: hidden;
+				&:hover{
+					transform: scale(1.5);
+					opacity: 1;
+				}
+			}
 		}
 	}
 }

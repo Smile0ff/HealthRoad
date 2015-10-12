@@ -1,8 +1,12 @@
-var app = app || {};
+"use strict";
+
+import $ from "jquery";
+import ProjectMovie from "../controllers/movieController";
+
+window.$ = $;
 
 $(function(){
 
-	$(":input").inputmask();
-	new app.MovieController();
+	new ProjectMovie();
 	
 });
