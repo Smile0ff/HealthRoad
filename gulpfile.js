@@ -32,7 +32,7 @@ gulp.task("js", function(){
 				extname: ".bundle.min.js"
 			}))
 			.pipe(gulp.dest(cfg.buildPath + "js"))
-			.pipe(notify({ message: "js done", onLast: true }));
+			.pipe(notify({message: "js done", onLast: true}));
 	});
 
 });

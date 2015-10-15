@@ -3,13 +3,14 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .slider-holder{
 	width: 100%;
+	padding-bottom: 56.25%;
 	position: relative;
 	background: transparent;
 	overflow: hidden;
 	ul.slider{
 		width: 100%;
-		height: 200px;
-		position: relative;
+		height: 100%;
+		position: absolute;
 		transition: all .5s @easing;
 		overflow: hidden;
 		li{
@@ -51,7 +52,6 @@
 			left: auto;
 			right: 0;
 			transform: translateX(100%);
-			visibility: hidden;
 		}
 		&:before{
 			display: block;
@@ -67,6 +67,20 @@
 			transform: translateX(0%);
 			visibility: visible;
 		}
+	}
+	& > .counter-holder{
+		display: inline-block;
+		position: absolute;
+		left: 50%;
+		bottom: 5px;
+		z-index: 10;
+		padding: 0 5px;
+		line-height: 20px;
+		color: lighten(@black, 50%);
+		background: fade(@grey, 50%);
+		font-size: .75em;
+		transform: translateX(-50%);
+		overflow: hidden;
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
