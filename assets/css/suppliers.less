@@ -1,44 +1,12 @@
 @import "lib/common.less";
+@import "lib/grid.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	.grid{
-		.row{
-			margin-bottom: 20px;
-		}
 		.col{
-			width: 31.88405797101449%;
-			float: left;
-			background: @grey;
-			box-sizing: border-box;
-			position: relative;
-			overflow: hidden;
-			&:nth-child(2){ margin: 0 20px; }
-			figure{
-				width: 40%;
-				height: auto;
-				margin: 40px auto;
-				position: relative;
-				overflow: hidden;
-			}
-			h2{
-				text-align: center;
-				padding: 0px 20px;
-			}
-			.info{
-				width: 100%;
-				height: 90px;
-				margin-top: 20px;
-				overflow: hidden;
-				p{
-					padding: 0 20px 0;
-					text-align: center;
-				}
-			}
-			.btn-more{
-				margin: 30px auto 40px;
-			}
+			h2, p{ text-align: center; }
 		}
 	}
 	&.supplier-inside{
