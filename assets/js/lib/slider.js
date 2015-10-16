@@ -1,9 +1,13 @@
-(function($, root){
+import {vendors as v} from "./vendors";
+
+(function($, root, v){
 
 	"use strict";
 
 	var pluginName = "slidy",
-		_defaults = {};
+		_defaults = {},
+
+		transform = v("transform");
 
 	function Plugin(el, options){
 		this.el = $(el);
@@ -65,7 +69,7 @@
 	}
 	function changeSlide(){
 		var	position = this.slideWidth * this.currentSlide * -1;
-		this.slider.css({"transform": "translateX("+ position +"px)"});
+		this.slider.css({transform: "translateX("+ position +"px)"});
 	}
 	function updateCounter(){
 		this.counter.html((this.currentSlide + 1) + " / " + this.slideCount);
@@ -77,4 +81,4 @@
 		});
 	}
 
-})($, window);
+})($, window, v);

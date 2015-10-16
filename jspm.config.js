@@ -8,9 +8,7 @@ System.config({
   },
   shim: {
     "assets/lib/slider": {
-      "deps": [
-        "jquery"
-      ],
+      "deps": ["jquery"],
       "exports": "slidy"
     }
   },
