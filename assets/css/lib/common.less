@@ -3,7 +3,7 @@
 @import "settings.less";
 @import "icons.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	Fonts start								  */
+/*	Fonts start								 				 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 h1, h2, h3, h5, h5, h6, p, span, time, a, small{
 	font-family: 'Ubuntu', sans-serif;
@@ -19,11 +19,11 @@ h3{ font-size: 1.125em; }
 p, a, time{ font-size: 1em; }
 a{ text-decoration: none; }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	Fonts end								  */
+/*	Fonts end								  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start							  */
+/*	layout start							  					*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #page,
 #content,
@@ -43,6 +43,9 @@ a{ text-decoration: none; }
 	max-width: 1200px;
 	margin: 80px auto;
 	overflow: hidden;
+	&.private{
+		margin: 0 auto;
+	}
 }
 .inner,
 .grid{
@@ -50,11 +53,11 @@ a{ text-decoration: none; }
 	margin: 0 auto;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout end								  */
+/*	layout end								 	 			*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	header start							  */
+/*	header start							  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #header{
 	background: @white;
@@ -150,7 +153,10 @@ a{ text-decoration: none; }
 				}
 			}
 			&.call-center-holder{
-				& > li a{ color: @green; }
+				& > li a{
+					font-size: .875em;
+					color: @green;
+				}
 			}
 			&.phones-holder{
 				a{
@@ -170,6 +176,19 @@ a{ text-decoration: none; }
 					}
 				}
 			}
+			&.office-widget{
+				margin: 0 10px 0 10px;
+				& > li{
+					span{
+						font-size: 1em;
+					}
+					a{
+						font-size: .875em;
+						color: @white;
+					}
+					&:first-child span{ font-size: .875em; }
+				}
+			}
 		}
 		.sprtr-v{
 			margin: 0 10px 0;
@@ -179,92 +198,27 @@ a{ text-decoration: none; }
 			display: block;
 			float: right;
 		}
-	}
-}
-#header.private{
-	background: @green;
-	height: 100px;
-	& > .inner{
-		padding-top: 0px;
-		overflow: hidden;
-		.logo{
-			width: 140px;
-			height: 100px;
-			position: static;
-			float: left;
-			border: 2px solid @white;
-			img{
-				width: 80%;
-				margin: 10px auto 0;
-			}
-		}
-	}
-	.info-holder{
-		width: ~"calc(100% - 140px)";
-		height: 60px;
-		margin: 0;
-		padding-left: 0;
-		float: left;
-		ul{
+		.btn-large.square{
 			float: right;
-			text-align: right;
-			margin: 20px 0 0 20px;
-			& > li{
-				line-height: 20px;
-				h3{
-					font-size: 1.125em;
-					text-transform: uppercase;
-				}
-				a{
-					font-weight: 400;
-					transition: all .5s @easing;
-					&:hover{
-						color: @green;
-					}
-				}
-			}
-			&.langs-holder{
-				display: block;
-				width: 40px;
-				float: left;
-				margin: 10px 0 0 10px;
-				& > li{
-					display: block;
-					&:hover,
-					&.active{
-						a{
-							color: @white;
-							&:before{
-								background: @white;
-							}
-						}
-					}
-				}
-			}
-			&.call-center-holder{
-				& > li a{ color: @white; }
-			}
-			&.phones-holder{
-				a{
-					span{ color: @black; }
-					&:hover{ color: @white; }
+
+			a{
+				background: @white;
+				color: @black;
+				border: none;
+				line-height: 60px;
+				&:hover{
+					color: @green;
 				}
 			}
 		}
-		.sprtr-v{
-			margin: 20px 10px 0;
-			float: right;
-			background: @white;
-		}
-		.btn-large{ display: none; }
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	header end								  */
+/*	header end								 			 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	menu start								  */
+/*	menu start								  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #menu-holder{
 	width: 100%;
@@ -321,11 +275,11 @@ a{ text-decoration: none; }
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	menu end								  */
+/*	menu end								 				 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	navigation start						  */
+/*	navigation start						  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #navigation-holder{
 	width: 240px;
@@ -363,11 +317,11 @@ a{ text-decoration: none; }
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	navigation end							  */
+/*	navigation end							  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	info holder start						  */
+/*	info holder start						  				*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	width: ~"calc(100% - 280px)";

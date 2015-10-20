@@ -1,0 +1,215 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start							  					*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page,
+#content{
+	height: 100%;
+}
+#content{
+	height: ~"calc(100% - 100px)";
+	overflow: hidden;
+	& > .outer.private-holder{
+		max-width: 1200px;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+	}
+}
+.scrollable-holder{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	& > .scrollable{
+		width: 100%;
+		height: 100%;
+		padding-right: 20px;
+		overflow: auto;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end								 	 			*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header start							  				*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+	background: @green;
+	height: 100px;
+	& > .inner{
+		height: 100%;
+		padding: 0;
+		overflow: hidden;
+		.logo{
+			width: 100px;
+			height: 80px;
+			margin: 10px 0 0 20px;
+			position: static;
+			float: left;
+			border: 2px solid @white;
+			img{
+				width: 80%;
+				margin: 12px auto 0;
+			}
+		}
+	}
+	.info-holder{
+		width: ~"calc(100% - 180px)";
+		margin: 20px 20px 0 0;
+		padding-left: 0;
+		float: left;
+		ul{
+			&.langs-holder{
+				display: block;
+				margin: 0 0 0 10px;
+				& > li{
+					display: block;
+					&:hover,
+					&.active{
+						a{
+							color: @white;
+							&:before{
+								background: @white;
+							}
+						}
+					}
+				}
+			}
+			&.call-center-holder{
+				& > li a{ color: @white; }
+			}
+			&.phones-holder{
+				a{
+					span{ color: @black; }
+					&:hover{ color: @white; }
+				}
+			}
+		}
+		.sprtr-v{ background: @white; }
+		.btn-large{ display: none; }
+		.btn-large.square{ display: block; }
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header end								 			 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	navigation start						  				*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#navigation-holder{
+	height: 100%;
+	margin-left: 20px;
+	li{
+		a{
+			padding: 0;
+			line-height: 40px;
+			span{
+				display: inline-block;
+				font-size: 1.125em;
+				color: inherit;
+			}
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	navigation end							  				*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	info holder start						  				*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content-info-holder{
+	width: ~"calc(100% - 280px)";
+	height: 100%;
+	float: left;
+	margin: 0 20px 0 0;
+	overflow: hidden;
+	.outer.scrollable-holder{
+		padding-top: 30px;
+		margin-top: -30px;
+		box-sizing: border-box;
+	}
+	h1, h2, h3{
+		margin-top: 20px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	h1, h2, h3, p, span{
+		text-align: left;
+		font-weight: normal;
+	}
+	*[class^="sprtr"]{
+		margin: 40px 0 20px;
+	}
+	p{ padding-bottom: 20px; }
+	.icons-hor{
+		margin: 20px auto;
+		ul{ text-align: center; }
+		li{
+			display: inline-block;
+			vertical-align: top;
+			white-space: -1;
+			margin-left: -4px;
+			padding: 0 20px;
+			box-sizing: border-box;
+			&:first-child{
+				margin-left: 0;
+			}
+			& > .icon{
+				font-size: 2.25em;
+				color: @green;
+			}
+		}
+	}
+	.list-holder{
+		ul, li{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		li{
+			position: relative;
+			margin-bottom: 20px;
+			&:before{
+				display: block;
+				width: 8px;
+				height: 8px;
+				position: absolute;
+				top: 50%;
+				left: 10px;
+				margin-top: -4px;
+				content: "";
+				background: @green;
+				overflow: hidden;
+			}
+			p{
+				padding: 0 20px 0 38px;
+			}
+			.description{
+				display: block;
+				padding: 20px 20px 0 38px;
+			}
+		}
+		&.black{
+			li:before{
+				width: 6px;
+				height: 6px;
+				margin-top: -3px;
+				background: @black;
+			}
+		}
+	}
+	.attention{
+		color: @green;
+		font-weight: 500;
+	}
+	p > strong{
+		font-weight: 500;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	info holder end							 				 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
