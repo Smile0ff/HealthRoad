@@ -1,0 +1,50 @@
+@import "lib/common.less";
+@import "lib/forms.less";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start							  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page,
+#content{
+	height: 100%;
+}
+#content{
+	position: relative;
+	background: @grey;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end							 	  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	auth start							 	  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.auth-holder{
+	width: 500px;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background: @white;
+	border: 1px solid @grey;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 5px 0px lighten(@black, 50%);
+	overflow: hidden;
+	h1{
+		font-size: 1.25em;
+		padding: 40px 0 0;
+	}
+	h2{
+		font-size: 1em;
+		color: darken(@grey, 40%);
+	}
+	.sprtr-h{ margin: 20px auto; }
+	form{
+		width: 70%;
+		margin: 0 auto 50px;
+	}
+	.field-area{ margin-bottom: 20px; }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	auth end							 	  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

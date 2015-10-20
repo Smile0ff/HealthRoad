@@ -171,14 +171,92 @@ a{ text-decoration: none; }
 				}
 			}
 		}
-		.separator-vertical{
-			margin: 0 0px 0 10px;
+		.sprtr-v{
+			margin: 0 10px 0;
 			float: right;
 		}
 		.btn-large{
-			display: none;
+			display: block;
 			float: right;
 		}
+	}
+}
+#header.private{
+	background: @green;
+	height: 100px;
+	& > .inner{
+		padding-top: 0px;
+		overflow: hidden;
+		.logo{
+			width: 140px;
+			height: 100px;
+			position: static;
+			float: left;
+			border: 2px solid @white;
+			img{
+				width: 80%;
+				margin: 10px auto 0;
+			}
+		}
+	}
+	.info-holder{
+		width: ~"calc(100% - 140px)";
+		height: 60px;
+		margin: 0;
+		padding-left: 0;
+		float: left;
+		ul{
+			float: right;
+			text-align: right;
+			margin: 20px 0 0 20px;
+			& > li{
+				line-height: 20px;
+				h3{
+					font-size: 1.125em;
+					text-transform: uppercase;
+				}
+				a{
+					font-weight: 400;
+					transition: all .5s @easing;
+					&:hover{
+						color: @green;
+					}
+				}
+			}
+			&.langs-holder{
+				display: block;
+				width: 40px;
+				float: left;
+				margin: 10px 0 0 10px;
+				& > li{
+					display: block;
+					&:hover,
+					&.active{
+						a{
+							color: @white;
+							&:before{
+								background: @white;
+							}
+						}
+					}
+				}
+			}
+			&.call-center-holder{
+				& > li a{ color: @white; }
+			}
+			&.phones-holder{
+				a{
+					span{ color: @black; }
+					&:hover{ color: @white; }
+				}
+			}
+		}
+		.sprtr-v{
+			margin: 20px 10px 0;
+			float: right;
+			background: @white;
+		}
+		.btn-large{ display: none; }
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -307,7 +385,7 @@ a{ text-decoration: none; }
 		text-align: left;
 		font-weight: normal;
 	}
-	*[class^="separator"]{
+	*[class^="sprtr"]{
 		margin: 40px 0 20px;
 	}
 	p{ padding-bottom: 20px; }
@@ -384,7 +462,7 @@ a{ text-decoration: none; }
 /*	footer start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .pre-footer{
-	display: none;
+	display: block;
 	background: @grey;
 	overflow: hidden;
 	.part{
@@ -395,7 +473,7 @@ a{ text-decoration: none; }
 		h3{
 			text-transform: uppercase;
 		}
-		.separator-horizontal{
+		.sprtr-h{
 			margin: 20px auto;
 		}
 	}
@@ -445,6 +523,15 @@ a{ text-decoration: none; }
 			}
 			&:hover a{
 				color: @green;
+			}
+		}
+	}
+	.part.entrance{
+		input[type="tel"].error,
+		input[type="password"].error{
+			border: 2px solid @yellowDark;
+			& + label{
+				background: @yellowDark;
 			}
 		}
 	}
