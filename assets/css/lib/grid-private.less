@@ -1,0 +1,63 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	grid start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content-info-holder{
+	.grid{
+		width: ~"calc(100% - 20px)";
+		margin: 20px 0 0 20px;
+		.row{
+			margin-bottom: 20px;
+		}
+		.col{
+			width: ~"calc(50% - 10px)";
+			background: @white;
+			float: left;
+			position: relative;
+			box-sizing: border-box;
+			overflow: hidden;
+			&:last-child{
+				margin-left: 20px;
+			}
+			.inner{
+				.title-holder{
+					margin: 0;
+					h2{
+						margin: 0;
+						line-height: 40px;
+						padding: 20px 20px 0;
+						.icon{
+							display: inline-block;
+							font-size: 1.25em;
+							color: @black;
+							float: left;
+							padding-right: 10px;
+						}
+					}
+					.sprtr-h{
+						margin: 20px;
+					}
+				}
+				li{
+					display: block;
+					padding: 0 20px;
+					margin-bottom: 10px;
+					overflow: hidden;
+					p{
+						padding: 0;	
+						span{
+							font-size: 1em;
+							font-weight: 500;
+						}
+					}
+				}
+				.btn-more{
+					float: left;
+					margin: 20px 0 20px 20px;
+				}
+			}
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	grid end								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
