@@ -109,18 +109,54 @@
 							<li><a href="#">Личные данные Сергея</a></li>
 						</ul>
 					</div>
-					<div class="outer scrollable-holder">
+					<div class="outer scrollable-holder no-action-panel">
 						<div class="inner scrollable">
 							<article class="kid-holder">
-								<div class="title-holder">
-									<h2><span class="icon hr-male"></span>Сергей</h2>
-									<span class="sprtr-h"></span>
+								<div class="inner">
+									<h2>Персональная информация</h2>
+									<h3><span class="icon hr-male"></span>Сергей</h3>
+									<div class="info-holder">
+										<div class="col">
+											<span><span class="icon hr-school"></span>Школа</span>
+											<p>Специализированный лицей №3</p>
+										</div>
+										<div class="col">
+											<span><span class="icon hr-pin"></span>Адрес</span>
+											<p>Ул. Старо-вокзальная 14/2 5кв., Киев, Украина</p>
+										</div>
+									</div>
+									<div class="info-holder">
+										<div class="col">
+											<span><span class="icon hr-coin"></span>Баланс на счету</span>
+											<p>673,45 UAH</p>
+										</div>
+										<div class="col">
+											<span><span class="icon hr-coin"></span>Суточный лимит</span>
+											<form action="php/limit.php" method="POST" id="limit-form">
+												<p class="limit-preview" data-currency="UAH">100,00 UAH</p>
+												<input type="text" name="kid" value="100,00" placeholder="0.000,00" id="limit-input" data-mask="#.##0,00" data-mask-reverse="true" data-rule-required="true" data-msg-required="Обязательное поле">
+												<button type="submit">
+													<span class="icon hr-accept"></span>
+												</button>
+												<span class="error"></span>
+												<span class="change-limit">изменить лимит</span>
+												<div class="loader">
+													<span class="dot"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="links-holder">
+										<a href="#"><span class="icon hr-stats"></span>Статистика заказов</a>
+										<a href="#"><span class="icon hr-cart"></span>Список продуктов</a>
+									</div>
 								</div>
 							</article>
 						</div>
-					</div>
-					<div class="outer action-panel-holder">
-						
 					</div>
 				</section>
 			</div>

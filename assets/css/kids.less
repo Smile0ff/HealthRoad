@@ -3,6 +3,7 @@
 @import "lib/breadcrumbs.less";
 @import "lib/pagination.less";
 @import "lib/grid-private.less";
+@import "lib/loader.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start							 					 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -16,24 +17,180 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	.kid-holder{
-		margin-top: 40px;
-		padding: 0 20px;
+		margin-top: 20px;
+		padding-left: 20px;
 		box-sizing: border-box;
-		.title-holder{
-			h2{
-				line-height: 40px;
-				span{
+		overflow: hidden;
+		.inner{
+			width: 100%;
+			background: @grey;
+			padding-bottom: 20px;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		h2{
+			padding: 20px;
+			background: @grey;
+			border-bottom: 2px solid @green;
+			box-sizing: border-box;
+		}
+		h3{
+			font-size: 1.5em;
+			padding: 40px 40px 20px;
+			margin: 0;
+			span{
+				display: inline-block;
+				vertical-align: middle;
+				padding-right: 10px;
+			}
+		}
+		.info-holder{
+			width: 100%;
+			padding: 0 40px 20px;
+			box-sizing: border-box;
+			overflow: hidden;
+			.col{
+				width: 50%;
+				float: left;
+				padding-right: 20px;
+				box-sizing: border-box;
+				&:nth-child(2){
+					padding-left: 20px;
+					padding-right: 0;
+				}
+				& > span{
 					display: inline-block;
 					vertical-align: middle;
-					padding-right: 10px;
+					color: @black;
+					font-size: 1em;
+					line-height: 40px;
+					.icon{
+						display: inline-block;
+						vertical-align: middle;
+						font-size: 1.125em;
+						padding-right: 10px;
+					}
+				}
+				p{
+					padding: 0;
 				}
 			}
-			.sprtr-h{
-				margin: 20px 0;
+		}
+		.links-holder{
+			width: 100%;
+			padding: 20px;
+			box-sizing: border-box;
+			overflow: hidden;
+			& > a{
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0 20px;
+				transition: all .5s @easing;
+				.icon{
+					display: inline-block;
+					vertical-align: middle;
+					padding-right: 5px;
+					font-size: .875em;
+					color: inherit;
+				}
+				&:hover{
+					color: @green;
+				}
 			}
 		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start												 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	limit start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#limit-form{
+	display: block;
+	position: relative;
+	input[type="text"]{
+		display: none;
+		width: 120px;
+		height: 40px;
+		float: left;
+		border: none;
+		font-family: "Ubuntu", sans-serif;
+		color: @black;
+		font-size: 1em;
+		text-indent: 10px;
+		box-sizing: border-box;
+		transition: all .5s @easing;
+		line-height: 40px;
+		overflow: hidden;
+	}
+	label.error,
+	span.error{
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 40px;
+		left: 0;
+		line-height: 30px;
+		font-family: "Ubuntu", sans-serif;
+		font-size: .875em;
+		color: @redDark;
+	}
+	span.error{ position: static; }
+	button[type="submit"]{
+		display: none;
+		width: 40px;
+		height: 40px;
+		float: left;
+		border: none;
+		margin-left: 5px;
+		background: transparent;
+		overflow: hidden;
+		& > span{
+			display: block;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+			line-height: 42px;
+			font-size: 1.125em;
+			color: @green;
+			background: @white;
+			transition: all .5s @easing;
+			box-sizing: border-box;
+			overflow: hidden;
+			&:hover{
+				background: @green;
+				color: @white;
+			}
+		}
+	}
+	.change-limit{
+		display: inline-block;
+		font-size: .875em;
+		padding-top: 5px;
+		color: @green;
+		cursor: pointer;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	.loader{
+		left: auto;
+		right: 0;
+	}
+	&.active{
+		min-height: 60px;
+		input[type="text"],
+		button[type="submit"]{
+			display: block;
+		}
+		& > .limit-preview,
+		& > .change-limit{
+			display: none;
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	limit end								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
