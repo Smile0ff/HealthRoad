@@ -10,14 +10,14 @@ class LimitController{
 		this.el = $("#limit-form");
 		this.limitInput = $("#limit-input");
 		this.limitPreview = this.el.find(".limit-preview");
+		this.limitButton = $("#change-limit"); 
 		this.loader = this.el.find(".loader");
 
 		this._events();
 	}
 	_events(){
-		this.el
-			.on("submit", $.proxy(this.handleForm, this))
-			.on("click", ".change-limit", $.proxy(this.changeLimit, this));
+		this.el.on("submit", $.proxy(this.handleForm, this));
+		this.limitButton.on("click", $.proxy(this.changeLimit, this));
 	}
 	handleForm(e){
 		e.preventDefault();

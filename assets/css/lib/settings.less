@@ -75,6 +75,7 @@ img, figure img{
 		text-align: center;
 		text-transform: uppercase;
 		transition: all .5s @easing;
+		cursor: pointer;
 		overflow: hidden;
 		&:hover,
 		&.active{
@@ -100,7 +101,8 @@ img, figure img{
 .btn-small{
 	width: 200px;
 	height: 40px;
-	& > a{
+	& > a,
+	& > span{
 		width: 100%;
 		height: 100%;
 		background: @white;
@@ -109,7 +111,8 @@ img, figure img{
 	}
 }
 .btn-small{
-	& > a{
+	& > a,
+	& > span{
 		text-transform: uppercase;
 		background: transparent;
 	}

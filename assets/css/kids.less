@@ -3,6 +3,7 @@
 @import "lib/breadcrumbs.less";
 @import "lib/pagination.less";
 @import "lib/grid-private.less";
+@import "lib/tables.less";
 @import "lib/loader.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start							 					 */
@@ -13,7 +14,7 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start							 					 */
+/*	detailed start						 					 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	.kid-holder{
@@ -78,13 +79,13 @@
 		}
 		.links-holder{
 			width: 100%;
-			padding: 20px;
+			padding: 0 20px;
 			box-sizing: border-box;
 			overflow: hidden;
 			& > a{
 				display: inline-block;
-				vertical-align: middle;
 				padding: 0 20px;
+				line-height: 40px;
 				transition: all .5s @easing;
 				.icon{
 					display: inline-block;
@@ -97,18 +98,27 @@
 					color: @green;
 				}
 			}
+			& > .btn-small{
+				display: inline-block;
+				vertical-align: middle;
+				width: auto;
+				float: right;
+				& > span{
+					text-align: center;
+					background: @white;
+					text-transform: none;
+					padding: 0 20px;
+					&:hover{
+						background: @green;
+					}
+				}
+			}
 		}
 	}
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start												 */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	limit start								  */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #limit-form{
 	display: block;
+	min-height: 60px;
 	position: relative;
 	input[type="text"]{
 		display: none;
@@ -165,16 +175,6 @@
 			}
 		}
 	}
-	.change-limit{
-		display: inline-block;
-		font-size: .875em;
-		padding-top: 5px;
-		color: @green;
-		cursor: pointer;
-		&:hover{
-			text-decoration: underline;
-		}
-	}
 	.loader{
 		left: auto;
 		right: 0;
@@ -192,5 +192,27 @@
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	limit end								  */
+/*	detailed end											 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	stats start								  				*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content-info-holder{
+	.outer.scrollable-holder{
+		padding: 50px 0 60px;
+	}
+	.stats-holder{
+		padding-left: 20px;
+		box-sizing: border-box;
+		overflow: hidden;
+		h2{ padding-bottom: 20px; }
+	}
+	.table-holder{
+		padding: 0;
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	stats end								 				 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
