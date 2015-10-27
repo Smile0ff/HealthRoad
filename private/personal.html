@@ -33,7 +33,7 @@
 	<link rel="icon" type="image/png" href="assets/images/favicons/96x96.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/160x160.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/192x192.png"-->
-	<link rel="stylesheet" href="../build/css/kids.bundle.min.css">
+	<link rel="stylesheet" href="../build/css/personal.bundle.min.css">
 </head>
 <body>
 	<div id="page">
@@ -85,10 +85,10 @@
 					<div class="outer scrollable-holder">
 						<div class="inner scrollable">
 							<ul>
-								<li>
+								<li class="active">
 									<a href="#"><span class="hr-personal hr-small"></span>Личные данные</a>
 								</li>
-								<li class="active">
+								<li>
 									<a href="#"><span class="hr-girl hr-small"></span>Мои дети</a>
 								</li>
 								<li>
@@ -102,8 +102,7 @@
 					<div id="breadcrumbs">
 						<ul>
 							<li><a href="#">Личный кабинет<span class="hr-right-arrow"></span></a></li>
-							<li><a href="#">Дети<span class="hr-right-arrow"></span></a></li>
-							<li><a href="#">Личные данные Сергея</a></li>
+							<li><a href="#">Личные данные</a></li>
 						</ul>
 					</div>
 					<div class="outer scrollable-holder no-action-panel">
@@ -111,47 +110,30 @@
 							<article class="personal-data-holder">
 								<div class="inner">
 									<h2>Персональная информация</h2>
-									<h3><span class="icon hr-male"></span>Сергей</h3>
+									<h3>Петров Петр Петрович</h3>
 									<div class="info-holder">
 										<div class="col">
-											<span><span class="icon hr-school"></span>Школа</span>
-											<p>Специализированный лицей №3</p>
+											<span><span class="icon hr-phone"></span>Телефон</span>
+											<p>+38 (044) 999-9999</p>
 										</div>
 										<div class="col">
-											<span><span class="icon hr-pin"></span>Адрес</span>
-											<p>Ул. Старо-вокзальная 14/2 25кв., Киев, Украина</p>
+											<span><span class="icon hr-email"></span>Электронный адрес</span>
+											<p>p.petrov@gmail.com</p>
 										</div>
 									</div>
 									<div class="info-holder">
 										<div class="col">
 											<span><span class="icon hr-coin"></span>Баланс на счету</span>
-											<p>673,45 UAH</p>
-										</div>
-										<div class="col">
-											<span><span class="icon hr-coin"></span>Суточный лимит</span>
-											<form action="../php/limit.php" method="POST" id="limit-form">
-												<p class="limit-preview" data-currency="UAH">100,00 UAH</p>
-												<input type="text" name="kid" value="100,00" placeholder="0.000,00" id="limit-input" data-mask="#.##0,00" data-mask-reverse="true" data-rule-required="true" data-msg-required="Обязательное поле">
-												<button type="submit">
-													<span class="icon hr-accept"></span>
-												</button>
-												<span class="error"></span>
-												<div class="loader">
-													<span class="dot"></span>
-													<span class="dot"></span>
-													<span class="dot"></span>
-													<span class="dot"></span>
-													<span class="dot"></span>
-												</div>
-											</form>
+											<p>675,25 грн.</p>
 										</div>
 									</div>
-									<div class="links-holder">
-										<a href="#"><span class="icon hr-stats"></span>Статистика заказов</a>
-										<a href="#"><span class="icon hr-cart"></span>Список продуктов</a>
-										<div class="btn-small" id="change-limit">
-											<span>Изменить дневной лимит</span>
-										</div>
+									<div class="kids-holder">
+										<h3>Мои дети</h3>
+										<span class="sprtr-h"></span>
+										<ul>
+											<li><a href="#"><span class="icon hr-male"></span>Сергей</a></li>
+											<li><a href="#"><span class="icon hr-female"></span>Мария</a></li>
+										</ul>
 									</div>
 								</div>
 							</article>
@@ -164,7 +146,7 @@
 	<script src="../jspm_packages/system.js"></script>
 	<script src="../jspm.config.js"></script>
 	<script>
-		System.import("../assets/js/app/kids");
+		System.import("../assets/js/app/personal");
 	</script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

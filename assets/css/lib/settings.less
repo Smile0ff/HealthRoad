@@ -98,7 +98,9 @@ img, figure img{
 }
 
 .btn-more,
-.btn-small{
+.btn-small,
+.btn-disable,
+.btn-enable{
 	width: 200px;
 	height: 40px;
 	& > a,
@@ -115,6 +117,15 @@ img, figure img{
 	& > span{
 		text-transform: uppercase;
 		background: transparent;
+	}
+}
+.btn-disable,
+.btn-enable{
+	&.active{
+		a{
+			color: @white;
+			background: @green;
+		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
