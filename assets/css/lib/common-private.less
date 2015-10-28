@@ -81,8 +81,29 @@
 			}
 			&.phones-holder{
 				a{
-					span{ color: @black; }
+					span{
+						display: block;
+						width: 18px;
+						height: 18px;
+						float: left;
+						margin: 1px 6px 1px 1px;
+						color: #990000;
+						font-size: .75em;
+						line-height: 18px;
+						background: @white;
+						text-align: center;
+						overflow: hidden;
+						&:before{
+							display: inline;
+							line-height: 18px;
+							padding: 0 2px 0 0;
+						}
+					}
+					&:nth-child(2){ color: #109dff; }
 					&:hover{ color: @white; }
+				}
+				& > li:nth-child(2) a{
+					span{ color: #109dff; }
 				}
 			}
 		}
@@ -127,9 +148,7 @@
 	margin: 0 20px 0 0;
 	overflow: hidden;
 	.text-holder{
-		p{
-			padding: 20px 40px 0;
-		}
+		p{ padding: 0 20px; }
 	}
 	.outer.scrollable-holder{
 		padding: 30px 0 40px;
@@ -138,6 +157,7 @@
 		&.no-action-panel{
 			padding: 30px 0 0;
 		}
+		& > .scrollable{ padding: 0 20px 0 0; }
 	}
 	h1, h2, h3{
 		margin-top: 20px;
@@ -218,48 +238,50 @@
 		font-weight: 500;
 	}
 }
-.categories-panel-holder{
-	width: 100%;
-	padding-left: 20px;
-	box-sizing: border-box;
-	overflow: hidden;
-	h2{
-		line-height: 20px;
-		padding: 20px 0;
-	}
-	ul{
+#content-info-holder{
+	.categories-panel-holder{
 		width: 100%;
-		height: 40px;
-		background: @grey;
-		text-align: left;
-	}
-	li{
-		display: inline-block;
-		vertical-align: top;
-		white-space: -1;
-		margin-left: -4px;
-		&:first-child{
-			margin-left: 0;
+		margin-left: 20px;
+		box-sizing: border-box;
+		overflow: hidden;
+		h2{
+			line-height: 20px;
+			padding: 20px 0;
 		}
-		a{
-			display: block;
+		ul{
+			width: 100%;
 			height: 40px;
-			line-height: 40px;
-			padding: 0 20px;
-			box-sizing: border-box;
-			transition: all .5s @easing;
-			overflow: hidden;
-			& > span{
-				color: inherit;
-				font-size: inherit;
-				padding-right: 5px;
-			}
+			background: @grey;
+			text-align: left;
 		}
-		&:hover,
-		&.active{
+		li{
+			display: inline-block;
+			vertical-align: top;
+			white-space: -1;
+			margin-left: -4px;
+			&:first-child{
+				margin-left: 0;
+			}
 			a{
-				background: @green;
-				color: @white;
+				display: block;
+				height: 40px;
+				line-height: 40px;
+				padding: 0 20px;
+				box-sizing: border-box;
+				transition: all .5s @easing;
+				overflow: hidden;
+				& > span{
+					color: inherit;
+					font-size: inherit;
+					padding-right: 5px;
+				}
+			}
+			&:hover,
+			&.active{
+				a{
+					background: @green;
+					color: @white;
+				}
 			}
 		}
 	}

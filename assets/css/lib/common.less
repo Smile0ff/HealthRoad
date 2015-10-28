@@ -168,12 +168,16 @@ a{ text-decoration: none; }
 						font-size: 1.125em;
 						line-height: 20px;
 						margin-right: 10px;
+						color: #ff0000;
 						&:before{
 							display: inherit;
 							vertical-align: inherit;
 							padding-top: 3px;
 						}
 					}
+				}
+				& > li:nth-child(2) a{
+					span{ color: #109dff; }
 				}
 			}
 			&.office-widget{
@@ -200,13 +204,19 @@ a{ text-decoration: none; }
 		}
 		.btn-large.square{
 			float: right;
-
 			a{
 				background: @white;
-				color: @black;
 				border: none;
-				line-height: 60px;
-				font-size: 1.125em;
+				line-height: 20px;
+				font-size: .875em;
+				font-weight: normal;
+				color: @black;
+				text-transform: none;
+				&:before{
+					display: block;
+					font-size: 1.25em;
+					margin: 13px 0 3px;
+				}
 				&:hover{
 					color: @green;
 				}

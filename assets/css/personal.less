@@ -8,37 +8,32 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	.personal-data-holder{
-		.kids-holder{
-			width: 100%;
-			overflow: hidden;
+		.inner{ padding-bottom: 0; }
+		.info-holder{
+			width: 50%;
+			float: left;
 			h3{
-				padding: 20px 40px 0;
+				padding: 40px 0 20px;
 			}
-			.sprtr-h{
-				margin: 20px 40px;
-			}
-			ul{
-				text-align: left;
-				padding: 0 40px;
-				box-sizing: border-box;
-			}
-			li{
-				display: inline-block;
-				vertical-align: top;
-				padding: 0 20px;
-				box-sizing: border-box;
-				&:first-child{
-					padding-left: 0;
+			.col{
+				width: 100%;
+				margin-bottom: 20px;
+				padding: 0;
+				&:nth-child(2){
+					padding: 0;
 				}
-				a{
-					display: inline-block;
-
+			}
+			&.kids{
+				.col > a{
+					font-size: 1.125em;
 					color: @black;
-					font-size: 1.25em;
 					transition: all .5s @easing;
 					span{
+						display: inline-block;
+						vertical-align: middle;
 						color: inherit;
-						margin-right: 5px;
+						font-size: inherit;
+						margin-right: 10px;
 					}
 					&:hover{
 						color: @green;
