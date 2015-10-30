@@ -53,7 +53,7 @@
 			text-transform: uppercase;
 			text-align: right;
 			color: @white;
-			padding: 5px 20px;
+			padding: 5px 30px;
 			background: fade(@green, 80%);
 		}
 		.btn-more{
@@ -90,17 +90,78 @@
 	}
 	.benefits-holder{
 		width: 100%;
-		margin-top: 40px;
+		margin: 40px 0;
 		overflow: hidden;
 		ul{
 			display: block;
 			width: 100%;
+			overflow: hidden;
 		}
 		li{
 			display: block;
-			width: 33.33%;
+			width: 32.22222222222222%;
+			padding-top: 32.22222222222222%;
 			float: left;
+			position: relative;
+			box-sizing: border-box;
 			overflow: hidden;
+			&:nth-child(2){
+				margin: 0 1.666666666666667%;
+			}
+			figure{
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				&:after{
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: "";
+					background: fade(@black, 55%);
+					overflow: hidden;
+				}
+				img{
+					width: 100%;
+					height: 100%;
+					transition: all 3s @easing;
+					transform: scale(1);
+				}
+			}
+			&:hover figure > img{
+				transform: scale(1.15);
+			}
+			.inner{
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 5;
+				.icon{
+					display: block;
+					width: 40px;
+					height: 40px;
+					margin: 0 auto;
+					text-align: center;
+					line-height: 40px;
+					font-size: 2.5em;
+					color: @black;
+					margin-top: 90px;
+				}
+				.sprtr-h{
+					margin: 140px auto 20px;
+					background: @green;
+				}
+				p{
+					color: @white;
+					padding: 0 20px;
+				}
+			}
 		}
 		.sprtr-h{
 			margin-top: 20px;
@@ -112,29 +173,45 @@
 	}
 }
 #watch-movie{
-	width: 100%;
+	width: 800px;
 	height: auto;
 	margin: 60px auto;
-	overflow: hidden;
 	a{
 		display: block;
 		width: 100%;
-		height: 40px;
+		font-size: 1em;
+		position: relative;
 		text-align: center;
+		overflow: hidden;
 	}
 	span{
 		display: inline-block;
 		text-transform: uppercase;
-		line-height: 40px;
-		font-size: 1.25em;
+		font-size: 1.5em;
 		color: @green;
 	}
-	span.hr-play{
-		width: auto;
-		height: auto;
-		font-size: 1.75em;
-		margin-right: 10px;
+	span.text{
+		line-height: 40px;
+		padding-left: 20px;
 	}
+	span.hr-play{
+		display: block;
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 2.5em;
+		animation: pulse 2s @easing 0s infinite;
+		&:before{
+			display: block;
+		}
+	}
+}
+@keyframes pulse{
+	0% { transform: scale(1); }
+	50% { transform: scale(.95); }
+	100% { transform: scale(1); }
 }
 #movie-holder{
 	width: 100%;
