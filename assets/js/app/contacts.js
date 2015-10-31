@@ -1,9 +1,10 @@
 "use strict";
 
 import $ from "jquery";
-
-window.$ = $;
+import mask from "jquery-mask-plugin";
+import validate from "jquery-validation";
 
 $(function(){
 	
+	$("form").validate();
 });

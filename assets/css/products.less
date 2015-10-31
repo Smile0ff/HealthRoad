@@ -7,19 +7,24 @@
 #content-info-holder{
 	.grid{
 		.col{
-			.slider-holder{
-				width: ~"calc(100% - 40px)";
-				margin: 20px 20px 0;
+			figure{
+				width: auto;
+				height: 180px;
+				background: @white;
+				margin: 0;
+				border: 20px solid @grey;
+				border-bottom: none;
 				box-sizing: border-box;
-				background: @grey;
-				figure, img{
-					background: @grey;
+				img{
+					width: auto;
+					height: 100%;
+					margin: 0 auto;
 				}
 			}
 			h2{
 				font-size: 1.125em;
 				margin: 0;
-				padding: 20px 20px 10px;
+				padding: 20px 20px 0;
 			}
 			.futures-list-holder{
 				display: block;
@@ -31,12 +36,26 @@
 					p{
 						line-height: 30px;
 						padding: 0 20px;
-						span{
-							font-weight: 500;
-						}
 					}
 				}
-			}			
+			}
+			.price-weight-holder{
+				width: 100%;
+				padding: 0 20px;
+				box-sizing: border-box;
+				overflow: hidden;
+				span{
+					display: block;
+					width: 50%;
+					line-height: 40px;
+					float: left;
+					&.price{
+						text-align: right;
+						color: @green;
+						font-weight: 500;
+					}
+				}
+			}	
 			.btn-small{
 				margin-bottom: 20px;
 				a{

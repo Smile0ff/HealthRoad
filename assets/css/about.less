@@ -8,8 +8,20 @@
 			display: inline-block;
 			vertical-align: middle;
 			padding: 0;
-			& > .icon{
-				padding: 0 20px;
+			& > figure{
+				display: inline-block;
+				width: 150px;
+				height: auto;
+				overflow: hidden;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			&:nth-child(3){
+				figure{
+					margin: 0 15px;
+				}
 			}
 			& > .long-arrow{
 				&:before{ background: @black; }

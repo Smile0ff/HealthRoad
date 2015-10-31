@@ -1,11 +1,12 @@
 @import "lib/common.less";
+@import "lib/forms.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	layout start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	.grid{
 		.row{
-			margin-bottom: 40px;
+			margin-bottom: 20px;
 		}
 		.col{
 			width: 33.33333333333333%;
@@ -86,6 +87,24 @@
 						overflow: hidden;
 					}
 				}
+			}
+		}
+	}
+	.form-holder{
+		form{ max-width: 100% }
+		.field-area{ margin-bottom: 10px; }
+		label{
+			line-height: 30px;
+			padding: 0;
+		}
+		input{
+			border: 2px solid @grey;
+		}
+		button[type="submit"]{
+			float: right;
+			margin: 20px 0 0;
+			span{
+				text-align: center;
 			}
 		}
 	}

@@ -67,6 +67,9 @@
 						<li>
 							<span>пн-пт: 9:00 - 18:00</span>
 						</li>
+						<li>
+							<a href="callback.html">зворотній зв'язок</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -75,8 +78,8 @@
 					<nav class="menu">
 						<ul>
 							<li><a href="index.html">Головна</a></li>
-							<li><a href="about.html">Про компанію</a></li>
 							<li><a href="project.html">Наш проект</a></li>
+							<li><a href="about.html">Про компанію</a></li>
 							<li><a href="suppliers.html">Виробники</a></li>
 							<li><a href="products.html">Продукти</a></li>
 							<li class="active"><a href="contacts.html">Контакти</a></li>
@@ -91,7 +94,7 @@
 					<ul>
 						<li><a href="contacts.html">Головний офіс</a></li>
 						<li><a href="contacts-school.html">Розташування у школі</a></li>
-						<li class="active"><a href="contacts-supplier.html">Підключення постачальників</a></li>
+						<li class="active"><a href="contacts-supplier.html">Контакти для постачальників</a></li>
 					</ul>
 				</aside>
 				<section id="content-info-holder">
@@ -115,69 +118,37 @@
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
-			<section class="pre-footer">
-				<div class="inner">
-					<div class="part contacts">
-						<h3>Контакти</h3>
+					<div class="form-holder">
+						<h2>Форма підключення постачальників</h2>
 						<span class="sprtr-h"></span>
-						<ul>
-							<li>
-								<span class="item"><span class="hr-pin"></span>03002, м. Київ, вул. Ярославів Вал 13/2</span>
-							</li>
-							<li>
-								<span class="item"><span class="hr-shedule"></span>пн.-пт. 9:00 - 18:00</span>
-							</li>
-							<li>
-								<span class="item"><span class="hr-phone"></span>+38 (044) 999 9999</span>
-							</li>
-							<li>
-								<span class="item"><span class="hr-email"></span>info@kdz.com.ua</span>
-							</li>
-						</ul>
-					</div>
-					<div class="part navigation">
-						<h3>Всі розділи</h3>
-						<span class="sprtr-h"></span>
-						<div class="list-holder">
-							<ul>
-								<li><a href="#">Головна</a></li>
-								<li><a href="#">Наш проект</a></li>
-								<li><a href="#">Про компанію</a></li>
-								<li><a href="#">Виробники</a></li>
-								<li><a href="#">Асортимент продуктів</a></li>
-								<li><a href="#">Галерея</a></li>
-								<li><a href="#">Новини</a></li>
-								<li><a href="#">Як отримати картку?</a></li>
-								<li><a href="#">Акції та пропозиції</a></li>
-								<li><a href="#">Як користуватись автоматом?</a></li>
-								<li><a href="#">Як стати клієнтом?</a></li>
-								<li><a href="#">Як поповнити картку?</a></li>
-								<li><a href="#">Стати партнером</a></li>
-								<li><a href="#">Питання-відповідь</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="part entrance">
-						<h3>Вхід для батьків</h3>
-						<span class="sprtr-h"></span>
-						<form action="#" method="POST" id="entrance-form">
+						<form action="#" method="POST" id="suppliers-form">
 							<div class="field-area">
-								<input type="tel" name="user[phone]" value="" placeholder="+38 (044) 999 9999" id="entrance-user-phone" data-inputmask="'mask': '+38 (999) 999 9999'">
-								<label for="entrance-user-phone"><span class="hr-phone"></span></label>
+								<label for="suppliers-title">Назва компанії постачальника</label>
+								<input type="text" name="suppliers[title]" value="" placeholder="Введіть назву вашої компаніі" id="suppliers-title" data-rule-required="true" data-msg-required="Напевно ви забули ввести назву вашої компанії">
 							</div>
 							<div class="field-area">
-								<input type="password" name="user[password]" value="" placeholder="ваш пароль" id="entrance-user-password">
-								<label for="entrance-user-password"><span class="hr-lock"></span></label>
+								<label for="suppliers-name">Ваше Ім'я</label>
+								<input type="text" name="suppliers[name]" value="" placeholder="Введіть ваше ім'я" id="suppliers-name" data-rule-required="true" data-msg-required="Будь ласка, назвіть ваше ім'я">
+							</div>
+							<div class="field-area">
+								<label for="suppliers-email">Електронна пошта</label>
+								<input type="email" name="suppliers[email]" value="" placeholder="Електронна пошта компанії або менеджера" id="suppliers-email" data-rule-required="true" data-msg-required="Вкажіть електронну пошту для зв'язку з вами" data-rule-email="true" data-msg-email="Це не схоже на елетронну пошту">
+							</div>
+							<div class="field-area">
+								<label for="suppliers-phone">Телефон</label>
+								<input type="tel" name="suppliers[phone]" value="" placeholder="Номер телефону компанії або менеджера" id="suppliers-phone" data-rule-required="true" data-msg-required="Вкажіть електронну пошту для зв'язку з вами" data-mask="+38 (999) 999-9999">
+							</div>
+							<div class="field-area">
+								<label for="suppliers-message">Повідомлення</label>
+								<textarea name="suppliers[message]" value="" placeholder="Напишіть нам повідомлення" id="suppliers-message" data-rule-required="true" data-msg-required="Це поле не має бути порожнім"></textarea>
 							</div>
 							<button type="submit">
-								<span>Увійти</span>
+								<span>Відправити</span>
 							</button>
 						</form>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 		</main>
 	</div>
 	<footer id="footer" class="sticky">

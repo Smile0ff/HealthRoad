@@ -25,6 +25,11 @@ form{
 	color: darken(@grey, 20%);
 }
 
+label{
+	font-family: "Ubuntu", sans-serif;
+	font-size: 1em;
+}
+
 input[type=text],
 input[type=tel],
 input[type=password],
@@ -87,6 +92,45 @@ input[type=email]{
 input[type="radio"],
 input[type="checkbox"]{
 	display: none;
+}
+
+textarea{
+	width: 100%;
+	min-height: 150px;
+	max-height: 250px;
+	resize: vertical;
+	border: 2px solid @grey;
+	box-sizing: border-box;
+	padding: 10px;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 1em;
+	& + label,
+	& + label.error + label{
+		display: block;
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: @black;
+		text-align: center;
+		transition: all .5s @easing;
+		cursor: text;
+		overflow: hidden;
+	}
+	& + label.error{
+		width: 100%;
+		height: auto;
+		position: static;
+		background: transparent;
+		font-family: "Ubuntu", sans-serif;
+		font-size: .875em;
+		line-height: 30px;
+		color: @redDark;
+		text-align: left;
+		padding-left: 10px;
+		box-sizing: border-box;
+	}
 }
 
 button[type="submit"]{
