@@ -6,5 +6,5 @@ import slidy from "../lib/slider";
 window.$ = $;
 
 $(function(){
-	//$(".slider-holder").slidy();
+	$(".carousel-holder").slidy();
 });

@@ -2,7 +2,7 @@
 @import "lib/grid.less";
 @import "lib/slider.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start							  					*/
+/*	products start							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	.grid{
@@ -26,17 +26,15 @@
 				margin: 0;
 				padding: 20px 20px 0;
 			}
-			.futures-list-holder{
-				display: block;
+			.description{
 				width: 100%;
+				padding: 0 20px;
 				margin-bottom: 20px;
+				box-sizing: border-box;
 				overflow: hidden;
-				li{
-					display: block;
-					p{
-						line-height: 30px;
-						padding: 0 20px;
-					}
+				p{
+					height: 54px;
+					line-height: 18px;
 				}
 			}
 			.price-weight-holder{
@@ -66,5 +64,17 @@
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	layout start							  					*/
+/*	products end		  					  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	product start		  					  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content-info-holder{
+	&.product-holder{
+		
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	product end		  						  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
