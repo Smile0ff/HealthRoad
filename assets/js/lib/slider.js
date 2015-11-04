@@ -19,125 +19,123 @@ import {vendors as v} from "./vendors";
 	Plugin.prototype = {
 		slider: [],
 		slides: [],
-		slideCount: null,
-		activeSlide: null,
-		prevSlide: null,
-		nextSlide: null,
+		slideCount: 0,
+		slideWidth: 0,
+		current: 0,
+		position: 0,
 		startX: 0,
 		moveX: 0,
-		deltaX: {},
-		current: 0,
-		isPressed: false,
-		isAnimate: false,
+		deltaX: 0,
 		initialize: initialize,
 		_events: _events,
 		defineDOM: defineDOM,
+		setCSS: setCSS,
 		handleArrow: handleArrow,
+		handleDot: handleDot,
 		touchStart: touchStart,
 		touchMove: touchMove,
 		touchEnd: touchEnd,
-		getDelta: getDelta,
-		setSlideGroup: setSlideGroup,
 		changeSlide: changeSlide,
-		updateAnimationState: updateAnimationState
+		handleResize: handleResize
 	}
 	function initialize(){
 		this._events();
 		this.defineDOM();
+		this.setCSS();
+
+		if(this.slideCount === 1) this.el.addClass("no-nav");
 	}
 	function _events(){
 		this.el
 			.on("click", ".arrow", $.proxy(this.handleArrow, this))
-			.on("touchstart mousedown", $.proxy(this.touchStart, this))
-			.on("touchmove mousemove", $.proxy(this.touchMove, this));
+			.on("click", ".dot", $.proxy(this.handleDot, this))
+			.on("touchstart", ".carousel", $.proxy(this.touchStart, this))
+			.on("touchmove", ".carousel", $.proxy(this.touchMove, this))
+			.on("touchend", ".carousel", $.proxy(this.touchEnd, this));
+
+		$(window).on("resize", $.proxy(this.handleResize, this));
 	}
 	function defineDOM(){
 		this.carousel = this.el.find(".carousel");
 		this.slides = this.el.find(".slide");
 		this.slideCount = this.slides.length;
 	}
+	function setCSS(){
+		this.slideWidth = this.el.outerWidth(true);
+		this.slides.css({ width: this.slideWidth });
+		this.carousel.css({
+			width: this.slideWidth * this.slideCount,
+			transform: "translate(0, 0)",
+			transform: "translate3d(0, 0, 0)"
+		});
+	}
 	function handleArrow(e){
-		if(this.isAnimate) return;
-		this.isAnimate = true;
-		
 		var target = $(e.target);
+
 		target.hasClass("left") ? this.current-- : this.current++;
 
-		if(this.current >= this.slideCount - 1) this.current = this.slideCount - 1;
-		if(this.current <= 0) this.current = 0;
+		if(this.current >= this.slideCount - 1){
+			this.current = this.slideCount - 1
+		} else if(this.current <= 0){
+			 this.current = 0;
+		}
 		this.changeSlide();
-		this.updateAnimationState();
 
+		return false;
+	}
+	function handleDot(e){
+		this.current = $(e.target).index();
+		this.changeSlide();
 		return false;
 	}
 	function touchStart(e){
-		if(this.isPressed || this.isAnimate) return;
-		this.isPressed = true;
+		this.startX = e.originalEvent.changedTouches[0].pageX;
 		this.isAnimate = true;
-
-		this.startX = e.originalEvent.pageX || e.originalEvent.changedTouches[0].pageX;
-		this.setSlideGroup();
-		this.prevSlide.addClass("left");
-		this.nextSlide.addClass("right");
-
-		$(window).one("touchend mouseup", function(e){
-			e.preventDefault();
-			this.touchEnd();
-		}.bind(this));
-
+		this.carousel.removeClass("animate");
 		return false;
 	}
 	function touchMove(e){
-		if(!this.isPressed) return;
+		this.moveX = e.originalEvent.changedTouches[0].pageX;
+		this.deltaX = this.startX - this.moveX;
 
-		this.moveX = e.originalEvent.pageX || e.originalEvent.changedTouches[0].pageX;
-		this.delta = this.getDelta();
+		if(this.deltaX > 0 && this.current >= this.slideCount - 1 || this.deltaX < 0 && this.current <= 0) this.deltaX /= 10;
+		this.position = (this.el.outerWidth() * this.current + this.deltaX) * -1;
 
-		this.setSlideGroup();
-		if(this.delta > 0 && !this.nextSlide.length || this.delta < 0 && this.prevSlide.length <= 0){
-			 this.delta /= 15
-		};
-
-		this.slides.css({
-			transform: "translateX("+ this.delta * -1 +"px)"
+		this.carousel.css({
+			transform: "translate("+ this.position +"px, 0)",
+			transform: "translate3d("+ this.position +"px, 0, 0)"
 		});
 
 		return false;
 	}
-	function touchEnd(){
-
-		this.slides.css(transform, "translateX(0px)").removeClass("left right active");
-
-		if(this.delta < 0 && this.prevSlide.length){
-			this.prevSlide.addClass("active");
-		} else if(this.delta > 0 && this.nextSlide.length){
-			this.nextSlide.addClass("active")
-		} else{
-			this.activeSlide.addClass("active");
+	function touchEnd(e){
+		if(Math.abs(this.deltaX) > this.slideWidth / 2){
+			this.deltaX > 0 ? this.current++ : this.current--;
 		}
+		
+		if(this.deltaX > 0 && this.current >= this.slideCount - 1){
+			this.current = this.slideCount - 1;
+		} else if(this.deltaX < 0 && this.current <= 0){
+			this.current = 0;
+		}
+		this.changeSlide();
 
-
-		this.isPressed = false;
-		this.isAnimate = false;
-	}
-	function getDelta(){
-		return this.startX - this.moveX;
-	}
-	function setSlideGroup(){
-		this.activeSlide = this.slides.filter(".active");
-		this.prevSlide = this.activeSlide.prev(".slide");
-		this.nextSlide = this.activeSlide.next(".slide");
+		return false;
 	}
 	function changeSlide(){
-		this.slides.eq(this.current).prev().removeClass("right").addClass("left");
-		this.slides.eq(this.current).next().removeClass("left").addClass("right");
+		this.position = this.slideWidth * this.current * -1;
+		this.carousel.addClass("animate").css({
+			transform: "translate("+ this.position +"px, 0)",
+			transform: "translate3d("+ this.position +"px, 0, 0)"
+		});
+		this.el.find(".dot").removeClass("active").eq(this.current).addClass("active");
 		this.slides.removeClass("active").eq(this.current).addClass("active");
+		if(this.current >= this.slideCount - 1 || this.current <= 0) this.carousel.removeClass("active");
 	}
-	function updateAnimationState(){
-		window.setTimeout(function(){
-			this.isPressed = false;
-			this.isAnimate = false;
-		}.bind(this), 500);
+	function handleResize(e){
+		this.setCSS();
+		this.current = 0;
+		this.el.find(".dot").removeClass("active").eq(0).addClass("active");
 	}
 
 	$.fn[pluginName] = function(options){

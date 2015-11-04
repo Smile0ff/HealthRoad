@@ -22,9 +22,9 @@ System.config({
   },
 
   map: {
-    "babel": "npm:babel-core@5.8.29",
+    "babel": "npm:babel-core@5.8.33",
     "babel-runtime": "npm:babel-runtime@5.8.29",
-    "core-js": "npm:core-js@1.2.3",
+    "core-js": "npm:core-js@1.2.5",
     "jquery": "github:components/jquery@2.1.4",
     "jquery-mask-plugin": "npm:jquery-mask-plugin@1.13.4",
     "jquery-validation": "github:jzaefferer/jquery-validation@1.14.0",
@@ -50,7 +50,7 @@ System.config({
     "npm:babel-runtime@5.8.29": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:core-js@1.2.3": {
+    "npm:core-js@1.2.5": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",

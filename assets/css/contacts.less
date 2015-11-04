@@ -9,18 +9,26 @@
 			margin-bottom: 20px;
 		}
 		.col{
-			width: 33.33333333333333%;
+			width: 31.88405797101449%;
 			height: auto;
 			float: left;
+			margin-left: 2.173913043478261%;
+			background: transparent;
 			overflow: hidden;
-			&:nth-child(2){
-				border-left: 2px solid @grey;
-				border-right: 2px solid @grey;
-				box-sizing: border-box;
+			&:first-child{
+				margin-left: 0;
 			}
-			h3{
+			h2{
 				text-align: center;
 				padding: 20px;
+			}
+			& > span{
+				display: block;
+				text-align: center;
+				font-size: 1em;
+			}
+			.role{
+				color: darken(@grey, 20%);
 			}
 			.sprtr-h{
 				margin: 20px auto;
@@ -56,19 +64,8 @@
 			}
 		}
 		&.staff-holder{
-			margin: 0 auto 80px;
-			&:last-child{
-				margin: 0;
-			}
 			.col{
-				h2{
-					text-align: center;
-				}
-				& > span{
-					display: block;
-					text-align: center;
-					font-size: 1em;
-				}
+				margin-bottom: 20px;
 				.sprtr-h{
 					margin: 20px auto 0;
 				}

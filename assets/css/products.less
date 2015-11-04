@@ -72,7 +72,47 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content-info-holder{
 	&.product-holder{
-		
+		.carousel-holder{
+			width: 50%;
+			padding-bottom: 37.5%;
+			float: left;
+			border: 2px solid @grey;
+			figure{
+				width: 80%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 10%;
+				transform: translateY(-50%);
+				overflow: hidden;
+			}
+		}
+		.info-holder{
+			width: 50%;
+			float: left;
+			overflow: hidden;
+			h1{
+				padding: 0 20px;
+				font-size: 1.5em;
+			}
+			.sprtr-h{
+				margin-left: 20px;
+			}
+			p{
+				padding: 0 20px 10px;
+				& > span{
+					font-weight: 500;
+				}
+				&.price{
+					padding: 20px;
+					color: @green;
+					font-weight: 500;
+					& > span{
+						color: @black;
+					}
+				}
+			}
+		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
