@@ -108,10 +108,24 @@
 					span{ color: #109dff; }
 				}
 			}
+			&.office-widget{
+				& > li a{ color: @white; }
+			}
 		}
 		.sprtr-v{ background: @white; }
 		.btn-large{ display: none; }
-		.btn-large.square{ display: block; }
+		.btn-large.square{
+			display: block;
+			a{
+				background: @white;
+				color: @black;
+				border: none;
+				&:hover{
+					background: @white;
+					color: @green;
+				}
+			}
+		}
 	}
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
