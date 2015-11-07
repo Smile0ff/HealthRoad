@@ -494,13 +494,15 @@
 
 	#watch-movie{
 		margin: 40px auto 60px;
-		span{
-			font-size: 1.125em; 
+		span.text{
+			padding-left: 0;
+			font-size: 1em;
 		}
-		span.text{ padding-left: 0; }
 		span.hr-play{
-			font-size: 1.5em;
-			&:before{ margin-top: 9px; }
+			display: block;
+			vertical-align: none;
+			font-size: 2.5em;
+			margin-bottom: 10px;
 		}
 	}
 
@@ -519,4 +521,54 @@
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	680 end 								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	520 start 								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 520px){
+
+	#watch-movie{
+		margin: 40px auto 60px;
+		span.text{
+			display: none;
+		}
+		span.hr-play{
+			display: block;
+			width: 60px;
+			height: 60px;
+			vertical-align: none;
+			font-size: 3.75em;
+			margin-bottom: 10px;
+		}
+	}
+
+	.outer.suppliers-holder{
+		.suppliers{
+			padding: 0 20px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			overflow: hidden;
+			li{
+				display: block;
+				vertical-align: none;
+				width: 33%;
+				height: auto;
+				float: left;
+				padding: 10px;
+				margin: 0;
+				position: relative;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.outer.questions-holder{
+		h2{ padding: 0 20px; }
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	520 end 								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
