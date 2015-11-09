@@ -57,8 +57,8 @@
 		}
 	}
 	.info-holder{
-		width: ~"calc(100% - 180px)";
-		margin: 20px 20px 0 0;
+		width: ~"calc(100% - 140px)";
+		margin: 20px 0 0 0;
 		padding-left: 0;
 		float: left;
 		ul{
@@ -324,9 +324,13 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	1024 start												 */
+/*	1024 start								  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media only screen and (max-width: 1024px){
+	
+	#header{
+		.info-holder{ padding-right: 0; }
+	}
 
 	#navigation-holder{
 		width: 240px;
@@ -342,5 +346,177 @@
 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*	1024 end												 */
+/*	1024 end								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	800 start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 800px){
+	
+	#header{
+		.info-holder{
+			.sprtr-v,
+			.phones-holder{
+				display: none;
+			}
+		}
+	}
+
+	#navigation-holder{
+		width: 100%;
+		float: none;
+		height: auto;
+		margin: 0;
+		border-right: none;
+		.scrollable-holder,
+		.scrollable{
+			height: auto;
+			padding-right: 0;
+		}
+		.scrollable-holder{
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		ul{
+			overflow: hidden;
+			li{
+				width: 31.57431838170624%;
+				padding-bottom: 31.57431838170624%;
+				position: relative;
+				float: left;
+				background: @grey;
+				&:nth-child(2){
+					margin: 0 2.638522427440633%;
+				}
+				a{
+					display: block;
+					width: 100%;
+					height: auto;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					text-align: center;
+					span{
+						display: block;
+						font-size: 2.5em;
+					}
+				}
+			}
+		}
+	}
+	
+	#page,
+	#content{
+		height: auto;
+	}
+
+	#content-info-holder{
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 0 20px;
+		box-sizing: border-box;
+		.text-holder{
+			p{ padding: 20px 0; }
+		}
+		.outer.scrollable-holder{
+			height: auto;
+			padding: 0;
+			margin: 20px 0;
+			.scrollable{
+				height: auto;
+				padding: 0;
+			}
+		}
+		.action-panel-holder{
+			&.bottom{
+				height: auto;
+				margin-bottom: 20px;
+				background: transparent;
+			}
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	800 end									  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	520 start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 520px){
+
+	#header{
+		& > .inner{
+			.logo{
+				width: 80px;
+				height: 60px;
+				margin: 20px 0 0 20px;
+				img{ margin-top: 8px; }
+			}
+		}
+		.info-holder{
+			width: ~"calc(100% - 120px)";
+			.btn-large.square{ width: 60px; }
+		}
+	}
+
+	#navigation-holder{
+		ul{
+			li{
+				width: 100%;
+				padding-bottom: 0;
+				float: none;
+				background: @grey;
+				&:nth-child(2){
+					margin: 10px 0;
+				}
+				a{
+					height: 60px;
+					position: static;
+					top: 0;
+					left: 0;
+					transform: translateY(0%);
+					text-align: left;
+					line-height: 60px;
+					padding: 0 20px;
+					span{
+						display: inline-block;
+						font-size: 1.5em;
+					}
+				}
+			}
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	520 end									  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	460 start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 460px){
+
+	#header{
+		height: auto;
+		& > .inner{
+			.logo{
+				display: none;
+			}
+		}
+		.info-holder{
+			width: 100%;
+			padding: 0 20px;
+			margin: 20px 0;
+			.btn-large.square{ width: 60px; }
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	460 end									  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -178,3 +178,121 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	products end							  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	800 start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 800px){
+
+	#content-info-holder{
+		.outer.scrollable-holder.kid-view{
+			padding: 0;
+			margin-top: 0px;
+		}
+		&.kid-stats-holder{
+			.outer.scrollable-holder{
+				padding: 0;
+				margin: 0;
+			}
+			.table-holder{
+				padding: 0;
+				margin-left: 0;
+				margin-bottom: 80px;
+			}
+		}
+		&.kid-products-holder{
+			.outer.scrollable-holder{
+				padding: 0;
+				margin: 0;
+			}
+			.action-panel-holder{
+				&.top{
+					padding-left: 0;
+				}
+			}
+			.grid{
+				padding-left: 0;
+			}
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	800 end									  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	680 start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 680px){
+
+	#content-info-holder{
+		&.kid-products-holder{
+			.action-panel-holder.top{
+				height: auto;
+				button[type="submit"]{
+					width: 200px;
+					margin: 20px 0 0 0;
+					float: right;
+				}
+			}
+			.categories-panel-holder{
+				width: 100%;
+				margin-top: 20px;
+				float: left;
+				ul{
+					height: auto;
+				}
+				li{
+					display: block;
+					width: 100%;
+					white-space: default;
+					margin-left: 0;
+				}
+			}
+			.grid{
+				.row{
+					margin-bottom: 0;
+				}
+				input[type="checkbox"]{
+					& + label.col{
+						width: 100%;
+						margin-bottom: 20px;
+						figure{
+							width: 280px;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	680 end									  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	440 start								  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 440px){
+
+	#content-info-holder{
+		&.kid-products-holder{
+			.grid{
+				input[type="checkbox"]{
+					& + label.col{
+						figure{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	440 end									  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
