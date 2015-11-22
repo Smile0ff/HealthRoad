@@ -11,4 +11,8 @@ $(function(){
 
 	new LimitController();
 	$("form").validate();
+
+
+	
+
 });
