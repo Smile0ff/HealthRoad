@@ -12,7 +12,6 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-title" content="">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"
 	<meta http-equiv="cleartype" content="on">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta name="Description" content="Описание необходимых мета-тегов." />
@@ -123,6 +122,32 @@
 										<div class="col">
 											<span><span class="icon hr-email"></span>Электронный адрес</span>
 											<p>p.petrov@gmail.com</p>
+										</div>
+										<div class="col change-password-holder">
+											<h3>Зміна поточного пароля</h3>
+											<form action="../php/change-password.php" method="POST" id="change-password-form">
+												<div class="response-holder"></div>
+												<div class="field-area">
+													<label for="old-password">Поточний пароль</label>
+													<input type="password" name="password[old]" value="" placeholder="Введіть ваш поточний пароль" id="old-password" data-rule-required="true" data-msg-required="Не може бути порожним">
+													<!--span class="error-holder">Не може бути порожним</span-->
+												</div>
+												<div class="field-area">
+													<label for="new-password">Новий пароль</label>
+													<input type="password" name="password[new]" value="" placeholder="Введіть новий пароль" id="new-password" data-rule-required="true" data-msg-required="Не може бути порожним">
+													<!--span class="error-holder">Не може бути порожним</span-->
+												</div>
+												<button type="submit">
+													<span>Змінити</span>
+												</button>
+												<div class="loader">
+													<span class="dot"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+												</div>
+											</form>
 										</div>
 									</div>
 									<div class="info-holder kids">
